@@ -1,13 +1,16 @@
 import React from 'react';
 
+import useFetch from '../../effects/use-fetch.effect';
+
 const Post = ({ postId }) => {
-    const post = null;
+    const post = useFetch(`https://jsonplaceholder.typicode.com/posts?id=${postId}`);
+    
     return (
-        <div className='p-4 bg-blue-100 rounded h-80 w-80 flex items-center justify-center'>
+        <div className='flex items-center justify-center p-4 bg-blue-100 rounded h-96 w-96'>
             {
                 post ? (
                     <div>
-                        <h3>{post.title}</h3>
+                        <h1 className='mb-2 text-xl font-bold capitalize'>{post.title}</h1>
                         <p>{post.body}</p>
                     </div>
                 ) : (
