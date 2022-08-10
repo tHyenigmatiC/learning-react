@@ -7,6 +7,7 @@ import ControlReRendering from './components/react-concepts/control-re-rending';
 import ConceptUseMemo from './components/react-concepts/concept-usememo.component';
 import ReactConcept from './pages/react-concept/react-concept.page';
 import HooksPage from './pages/hooks/hooks.component';
+import UseReducerExample from './components/use-reducer/use-reducer.component';
 
 import CustomHook from './components/custom-hook/custom-hook.component';
 
@@ -23,6 +24,7 @@ function App() {
         <Route path='use-memo' element={<ConceptUseMemo/>}/>
         <Route path='hooks' element={<HooksPage/>} />
         <Route path='custom-hooks' element={<CustomHook/>}/>
+        <Route path='use-reducer' element={<UseReducerExample/>}/>
       </Routes>
     </div>
   );

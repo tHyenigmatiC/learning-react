@@ -1,0 +1,7 @@
+Working:
+    Lets us build out reducer functions and leverage them as state management
+    inside of our components the same way as useState does. Except its going to follow 
+    a similar flow of data of firing actions and those actions changing a reducer object of
+    some kind; the way that we have seen of redux except localized to a component.
+
+    Great in places where we have more complex local state management.
