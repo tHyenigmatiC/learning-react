@@ -1,0 +1,43 @@
+Mutatiting State in react is not good practice
+  Since one or more refs would remain identical, as useEffect with dependencies 
+  [users] would not be triggered even though something in users changed. 
+  Since the ref of users didn't change. any previous states should remain 
+  immutable, even if it seems to work, there are precise pitfalls, that can be caused
+  when having a depedency on the ref that isn't changed. Actually in the 
+  selectUser function one could just  do setSelectedIndex(users.findIndex(user => user.id === id)).
+  Then selectedUser = users[selectedIndex]. Done, no need for useMemo either, without breaking react 
+  rules. There's no need for useMemo here, we have the memo, its in the array, we just need the 
+  index of it ;) But if using that method, we have to also update the index when the users array
+  changes.
+
+
+
+React always re-render the children if Parent state changes.
+
+
+    Basically doing things the react way, will always cause re-renders in all the children 
+    if the parent state changes 
+    It's annyoing, but it's best to keep to it, to not cause other unwanted side-effects such as
+    components not re-rendering when needed is even as worst problem. The only way to prevent 
+    automatic rendering manually is to apply HOC React.memo()/PureComponent to the components 
+    definition to filter out the exact changes we allow to cause a re-render for every component
+    we create. Else the default of the compare function is Object.is(prevProps, nextProps), so even
+    if the Component state changes to the same state except the ref changes, it will cause the
+    creation of a new props objects that will trigger a new re-render even thought nothing
+    has changed inside props (the ref of the props object itself has changed since it's a new one) 
+    That has to be manually checked. React can't know what we consider change or not.
+
+    Read about Pure Component in official docs: https://reactjs.org/docs/react-api.html#reactpurecomponent
+
+    Causing an internal state change of any component will always trigger a re-render of the 
+    children in this component, thus re-going through everything in that component. If a child
+    component receives props from that stae, it has to be checked for the changes of the speicfic
+    props, because on any state change, the props object on all those children will change ref and
+    hence cause a re-render. It's on purpose and it makes sense.
+    But if you  really understand that process,, the re-rendering process can be heavily 
+    optimized by not letting new props object cause re-render when nothing inside them has 
+    changed except the ref of the props object.
+
+    Example: './src/components/react-concepts/control-re-rending.jsx'
+
+
