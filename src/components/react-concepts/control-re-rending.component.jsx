@@ -78,10 +78,10 @@ const ControlReRendering = () => {
     }), [setState]);
     return (
       <div className='p-4 bg-blue-100 rounded h-min'>
-        <button className='m-2 p-4 bg-white hover:bg-slate-500' onClick={noChangeRight}>no change right</button>
-        <button className='m-2 p-4 bg-white hover:bg-slate-500' onClick={noChangeWrong}>no change wrong</button>
-        <button className='m-2 p-4 bg-white hover:bg-slate-500' onClick={changeARight}>change A right</button>
-        <button className='m-2 p-4 bg-white hover:bg-slate-500' onClick={changeAWrong}>change A wrong</button>
+        <button className='m-2 p-4 bg-white hover:bg-slate-500 hover:text-white' onClick={noChangeRight}>no change right</button>
+        <button className='m-2 p-4 bg-white hover:bg-slate-500 hover:text-white' onClick={noChangeWrong}>no change wrong</button>
+        <button className='m-2 p-4 bg-white hover:bg-slate-500 hover:text-white' onClick={changeARight}>change A right</button>
+        <button className='m-2 p-4 bg-white hover:bg-slate-500 hover:text-white' onClick={changeAWrong}>change A wrong</button>
         <AlwaysReRenderStandard variable={a} variableName="a" />
         <ReRenderAlways variable={a} variableName="a" />
         <ReRenderNever variable={a} variableName="a" />

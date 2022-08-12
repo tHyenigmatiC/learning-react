@@ -52,10 +52,12 @@ const RenderEventHandlerExample = () => {
                 </p> : 
                 <>
                     <p className="p-4 text-xl text-center">You clicked <b>{ count }</b> times</p>
-                    <button className='p-2 m-4 text-white bg-green-700 rounded' onClick={ () => setCount( prevCount => prevCount + 1 ) } > 
+                    <button className='p-2 m-4 text-white bg-green-700 rounded' 
+                        onClick={ () => setCount( prevCount => prevCount + 1 ) } > 
                         Increase Count 
                     </button>
-                    <button className='p-2 m-4 text-white bg-green-700 rounded' onClick={handleShowAlert} > 
+                    <button className='p-2 m-4 text-white bg-green-700 rounded' 
+                        onClick={handleShowAlert} > 
                         Show Alert 
                     </button>
                 </>
