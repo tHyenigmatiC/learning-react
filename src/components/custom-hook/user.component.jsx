@@ -1,6 +1,6 @@
 import React from 'react';
 
-import useFetch from '../../effects/use-fetch.effect';
+import useFetch from '../../effects/use-fetch';
 
 const User = ({ userId }) => {
 

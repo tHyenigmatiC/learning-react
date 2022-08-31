@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-function ReactConcept({ navigate, location}) {
+function ReactConcept() {
   return (
     <>
       <div className='grid grid-cols-3 gap-8 h-min'>

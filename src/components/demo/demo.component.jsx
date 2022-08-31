@@ -35,13 +35,13 @@ const Demo = () => {
 
 const InnerChild = ({ count }) => {
 
-    const [ innerCount, setInnerCount ] = useState(count );
+    const [ innerCount, setInnerCount ] = useState(count);
 
     // const magicNumber = () => {
     //     setInnerCount( innerCount + 5);
     // }
 
-    console.log(innerCount);
+    // console.log(innerCount);
 
     return (
         <>
